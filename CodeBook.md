@@ -52,7 +52,8 @@ STANDING, LAYING).
 * The remaining columns contain the sensor readings (decimal values) taken for subjects performing 
 activities.  Sensor readings were recorded by smartphone worn by the subjects.
 These values are decimal values. Column names match the names from the original data
-set.  Please see features_info.txt for more information about these sensor readings.
+set.  Please see the features_info.txt file distributed with the UCI HAR Dataset 
+for more information about these sensor readings.
 
 
 Data Set 2 (aka tidy2)
@@ -99,5 +100,6 @@ STANDING, LAYING).
 
 * The remaining columns contain the mean values (decimal values) of ALL observations taken 
 for a given subject performing a given activity.  As a result, there is just one row of means
-for each subject/activity pair.
+for each subject/activity pair.  Please see the features_info.txt file distributed with the UCI HAR Dataset 
+for more information about these sensor readings.
 
