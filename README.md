@@ -1,5 +1,5 @@
-CleaningDataCourseProject
-=========================
+CleaningDataCourseProject README
+================================
 
 The script in this repository does the following:
 
