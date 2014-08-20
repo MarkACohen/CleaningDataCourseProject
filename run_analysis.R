@@ -93,8 +93,7 @@ for (i in 1:length(datSubject))
 # and any features that contain a mean or std...
 tidy <- tidy[, grep("mean|std|subject|activity", names(tidy) )] 
 
-# create the second tidy data set before we repalce
-# the activity codes with text...
+# create the second tidy data set...
 for (s in 1:30)
 {
     for (a in 1:6)
@@ -111,17 +110,23 @@ for (s in 1:30)
         }
     }
 }
+tidy2 <- as.data.frame(tidy2)
+
+# finally, we can replace the activity codes with a description
+# of the activity...
+tidy$activity[tidy$activity == 1] = "WALKING"
+tidy$activity[tidy$activity == 2] = "WALKING_UPSTAIRS"
+tidy$activity[tidy$activity == 3] = "WALKING_DOWNSTAIRS"
+tidy$activity[tidy$activity == 4] = "SITTING"
+tidy$activity[tidy$activity == 5] = "STANDING"
+tidy$activity[tidy$activity == 6] = "LAYING"
+tidy2$activity[tidy2$activity == 1] = "WALKING"
+tidy2$activity[tidy2$activity == 2] = "WALKING_UPSTAIRS"
+tidy2$activity[tidy2$activity == 3] = "WALKING_DOWNSTAIRS"
+tidy2$activity[tidy2$activity == 4] = "SITTING"
+tidy2$activity[tidy2$activity == 5] = "STANDING"
+tidy2$activity[tidy2$activity == 6] = "LAYING"
 
 # save the second tidy data set to a text file... 
 write.table(tidy2, "tidy2.txt", row.names = FALSE)
-
-
-# finally, we can remplace the activity codes with a description
-# of the activity...
-tidy$activity[tmp$activity == 1] = "WALKING"
-tidy$activity[tmp$activity == 2] = "WALKING_UPSTAIRS"
-tidy$activity[tmp$activity == 3] = "WALKING_DOWNSTAIRS"
-tidy$activity[tmp$activity == 4] = "SITTING"
-tidy$activity[tmp$activity == 5] = "STANDING"
-tidy$activity[tmp$activity == 6] = "LAYING"
 
