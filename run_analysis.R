@@ -71,7 +71,6 @@ for (r in 1:length(datSubject))
 
 # build a data frame that initially just contains a column to hold
 # the subject and the activity they were performing...
-#tidy <- data.frame(subject = datSubject, activity = datActivity)
 tidy <- data.frame(subject = numeric(10299), activity = numeric(10299))
 
 # now we bind more columns, one for each feature that was recorded
@@ -106,7 +105,7 @@ for (s in 1:30)
         }
         else
         {
-            tidy2 <- rbind(df, colMeans((subset(tidy, tidy[1] == s & tidy[2] == a))))
+            tidy2 <- rbind(tidy2, colMeans((subset(tidy, tidy[1] == s & tidy[2] == a))))
         }
     }
 }
